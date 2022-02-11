@@ -1,8 +1,9 @@
-let knex = require('knex');
+let knex =require('knex')
 
 let sqlite = knex({
   client: 'sqlite3',
-});
+  connection: { filename: './sqlite3Db/eCommerce.sqlite' }
+})
 
 class SqliteDb {
   static client;

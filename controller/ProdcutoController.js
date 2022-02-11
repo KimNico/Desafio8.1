@@ -63,11 +63,11 @@ class ProductoController {
 
   async addProduct(product) {
     try {
-      const { title, price, thumbnail } = product;
+      const { titulo, precio, foto } = product;
       let data = {
-        nombre: title,
-        precio: price,
-        foto: thumbnail
+        nombre: titulo,
+        precio: precio,
+        foto: foto
       };
       await db.from(this.table).insert(data);
       return resp;

@@ -3,26 +3,26 @@ const fs = require("fs")
 const path= require("path");
 const Prod = require("../controller/ProdcutoController");
 
-let ProdController = new Prod("productos")
+let prodController = new Prod("productos")
 
 const router  = express.Router();
 
 router.get('/', async(req,res,next)=>{
-    res.render("formulario",{data: await ProdController.getProductos()})
+    res.render("index",{data: await prodController.getProductos()})
 });
 
 router.get("/productos", async(req,res,next)=>{
-    let data = await ProdController.getProductos();
-    res.render("productos",{data})
+    let data = await prodController.getProductos();
+    res.render("historial",{data})
 });
 
 router.post("/productos",async(req,res,next)=>{
-    ProdController.addProduct(req.body)
+    prodController.addProduct(req.body)
     res.redirect("/");
 })
 
 router.put("/productos/:id",async(req,res,next)=>{
-    res.json(await ProdController.getProductoById(req.body,req.params.id))
+    res.json(await prodController.getProductoById(req.body,req.params.id))
 })
 
 module.exports=router;

@@ -23,8 +23,12 @@
     "handlebars": "^4.7.7",
     "http": "0.0.1-security",
     "knex": "^0.95.15",
+    "mariadb": "^2.5.5",
     "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
     "path": "^0.12.7",
-    "socket.io": "^4.4.1"
+    "socket.io": "^4.4.1",
+    "sqlite": "^4.0.23",
+    "sqlite3": "^5.0.2"
   }
 }

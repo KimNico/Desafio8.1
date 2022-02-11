@@ -1,13 +1,14 @@
 let knex = require('knex');
 
-let mariadb = knex({
+let mariadb =knex ({
   client: 'mysql',
   connection: {
     host: 'localhost',
     user: 'root',
-    password: '',
-    database: 'clasecoder'
+    password: 'root1234',
+    database: 'clasecoder',
   },
+  pool:{ min: 0, max: 7 }
 });
 
 class MariaDb {
